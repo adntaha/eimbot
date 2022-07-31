@@ -2,16 +2,16 @@ import { Intents, PermissionString, PresenceData } from "discord.js";
 
 export default {
     prefixes: process.env.NODE_ENV === "production" ? ["!"] : ["!!"],
-    botName: "",
+    botName: "EIM Bot",
 
     version: "1.0.0",
-    admins: [""],
+    admins: ["440990343899643943", "707973022988107796"],
 
     // If your bot isn't public, or open source, or doesn't have a
     // Support server, feel free to remove the following variables.
-    supportServer: "",
-    minimalInvite: "",
-    gitHub: "",
+    supportServer: "https://discord.gg/8nTFdVQYf6",
+    minimalInvite: "8nTFdVQYf6",
+    gitHub: "https://github.com/botatooo/eimbot",
 
     presence: {
         status: "online",
@@ -47,9 +47,4 @@ export default {
         "SEND_MESSAGES",
         "USE_EXTERNAL_EMOJIS"
     ] as PermissionString[],
-
-    dataDog: {
-        apiKey: process.env.DATADOG_API_KEY,
-        baseURL: "https://app.datadoghq.com/api/v1/"
-    }
 };

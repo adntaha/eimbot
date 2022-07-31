@@ -28,8 +28,6 @@ export default class Ready extends EventHandler {
                 } users.\n\n${guildsStringList.join("\n\n")}`
             )}) and ${stats.users} users.`
         );
-        this.client.dataDog.gauge("guilds", stats.guilds);
-        this.client.dataDog.gauge("users", stats.users);
     }
 }
 

@@ -69,6 +69,7 @@ jspm_packages/
 .yarn-integrity
 
 # dotenv environment variables file
+.env
 .env.prod
 .env.dev
 .env.test
@@ -107,3 +108,5 @@ dist
 .vscode/
 .idea/
 .DS_Store
+.env.dev
+.env.prod

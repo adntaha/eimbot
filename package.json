@@ -1,7 +1,7 @@
 {
-    "name": "",
+    "name": "eimbot",
     "version": "1.0.0",
-    "description": "",
+    "description": "A bot for the EIM discord server.",
     "main": "dist/src/index.js",
     "type": "module",
     "scripts": {
