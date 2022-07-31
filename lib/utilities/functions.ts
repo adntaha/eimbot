@@ -163,8 +163,8 @@ export default class Functions {
                 .send();
             if (haste.text() === "error code: 1020")
                 return `Cloudflare Error 1020 - Ray ${haste.headers["cf-ray"]}`;
-            return `${this.client.config.hastebin}/${haste.json().key}${
-                type ? `.${type}` : ".md"
+            return `${this.client.config.hastebin}/${haste.json().key}.${
+                type ?? "md"
             }`;
         } catch (error) {
             this.client.logger.error(error);
@@ -331,4 +331,3 @@ export default class Functions {
         return typeof input === "function";
     }
 }
-

@@ -126,24 +126,26 @@ export default class Eval extends TextCommand {
      * @returns The parsed content.
      */
     private parseContent(content: string): string {
-        return (
-            content
-                .replace(this.client.token || "", "[ T O K E N ]")
-                // @ts-ignore
-                .replace(this.client.mongo.s.url, "[ M O N G O ]")
-                .replace(
-                    this.client.mongo.options.credentials?.password || "",
-                    "[ M O N G O P A S S ]"
-                )
-                .replace(
-                    this.client.mongo.options.srvHost || "",
-                    "[ M O N G O H O S T ]"
-                )
-        );
+        if (this.client.token)
+            content = content.replace(this.client.token, "[ T O K E N ]");
+        // @ts-ignore
+        if (this.client.mongo.s.url)
+            // @ts-ignore
+            content = content.replace(this.client.mongo.s.url, "[ M O N G O ]");
+        if (this.client.mongo.options.credentials?.password)
+            content = content.replace(
+                this.client.mongo.options.credentials?.password,
+                "[ M O N G O P A S S ]"
+            );
+        if (this.client.mongo.options.srvHost)
+            content = content.replace(
+                this.client.mongo.options.srvHost,
+                "[ M O N G O H O S T ]"
+            );
+        return content;
     }
 
     private formatTime(syncTime: string, asyncTime?: string) {
         return asyncTime ? `⏱ ${asyncTime}<${syncTime}>` : `⏱ ${syncTime}`;
     }
 }
-

@@ -37,7 +37,7 @@ export default {
     // Properly update the following intents list for the bot to
     // Function properly, it currently only listens for guilds
     // And interactions.
-    intents: [Intents.FLAGS.GUILDS],
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 
     // If your bot requires any permissions other than the ones below
     // Add them and all commands and interactions will only work if
